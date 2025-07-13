@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot name="mechapen_leg">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.02"/> </geometry>
+      <material name="grey">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="thigh_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/> <axis xyz="0 1 0"/> <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/> </joint>
+
+  <link name="thigh_link">
+    <visual>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/> <geometry>
+        <box size="0.03 0.03 0.5"/> </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="knee_joint" type="revolute">
+    <parent link="thigh_link"/>
+    <child link="shin_link"/>
+    <origin xyz="0 0 -0.5" rpy="0 0 0"/> <axis xyz="0 1 0"/> <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/> </joint>
+
+  <link name="shin_link">
+    <visual>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/> <geometry>
+        <box size="0.02 0.02 0.5"/> </geometry>
+      <material name="green">
+        <color rgba="0 0.8 0 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="foot_fixed_joint" type="fixed">
+    <parent link="shin_link"/>
+    <child link="foot_link"/>
+    <origin xyz="0 0 -0.5" rpy="0 0 0"/> </joint>
+  <link name="foot_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.02"/> </geometry>
+      <material name="red">
+        <color rgba="0.8 0 0 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <material name="grey"> <color rgba="0.7 0.7 0.7 1"/> </material>
+  <material name="blue"> <color rgba="0 0 0.8 1"/> </material>
+  <material name="green"> <color rgba="0 0.8 0 1"/> </material>
+  <material name="red"> <color rgba="0.8 0 0 1"/> </material>
+
+</robot>

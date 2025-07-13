@@ -1,0 +1,60 @@
+# ROS Workspace Ignores
+# ---------------------
+# Built executables and libraries
+/build/
+/install/
+# Log files
+/log/
+
+# Python Virtual Environment
+# --------------------------
+# Virtual environment directories
+/venv/
+.venv/
+env/
+.env/
+
+# Rust-specific Ignores
+# --------------------
+# Cargo build directory (CHANGED: removed leading slash to ignore nested 'target' directories)
+target/
+# Cargo generated test fixtures
+*.dSYM
+*.profdata
+
+# Dependency management (usually committed for applications, but can be ignored for libraries)
+# For a ROS application/workspace, it's generally good to commit Cargo.lock for reproducible builds.
+# If you were making a reusable Rust library, you might uncomment the line below:
+# Cargo.lock
+
+# IDE and Editor Specific Files
+# -----------------------------
+# Visual Studio Code
+.vscode/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# IntelliJ / CLion
+.idea/
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Operating System Specific Files
+# -------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+
+# Misc Temporary Files
+# --------------------
+*.bak
+*.orig
+*.swp
+*~
+# Any core dump files
+core
+core.*

@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.8) # Or newer if preferred
+
+project(mechapen_core NONE) # Declare your project, type NONE as it's not a C++/Python project itself
+
+# Find required ROS 2 packages for build/installation
+find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_auto REQUIRED) # Still needed for general CMake infrastructure
+find_package(ament_lint_auto REQUIRED COMPONENTS xmllint) # For package.xml linting
+
+# Install directories containing launch files, URDFs, RViz configs
+install(
+  DIRECTORY launch urdf rviz
+  DESTINATION share/${PROJECT_NAME}
+  # This 'PATTERN' exclusion helps ensure only relevant files are copied,
+  # though for these simple directories it might not be strictly necessary.
+  # We are explicitly saying "copy these directories AS IS"
+  # No PATTERN/EXCLUDE_FROM_ALL needed for simple directories.
+)
+
+ament_package() # Mark this as a ROS 2 package
