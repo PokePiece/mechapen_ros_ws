@@ -8,7 +8,7 @@
 
 ## ✨ Project Overview
 
-This repository contains the foundational control software and simulation environment for a **micro-level mechatronic self-writing pen**. As a Mechatronics Software Engineer in 2025, I architected this system to be the robust core software integrated directly onto a physical device, where long-term stability, ultimate control, and clever data handling are paramount.
+This repository contains the foundational control software and simulation environment for a **micro-level mechatronic self-writing pen**. As a Mechatronics Software Engineer in 2025, I architected this system to be the robust core software integrated directly onto a physical device, where long-term stability, ultimate control, and clever data handling are paramount. I continuously develop this system for deployment and full motor articulation.
 
 The pen's core software is initiated in **Rust**, constructing a modular, high-performance core. It features an engineered **2D forward kinematics solver** for precise leg movement, integrated with a basic **gait control system** to simulate dynamic locomotion. A powerful Rust-based sandbox has been established, enabling rapid iteration and rigorous testing of complex algorithms independent of hardware constraints. This foundational work is preparing for advanced AI integration and future visualization within Unity.
 
